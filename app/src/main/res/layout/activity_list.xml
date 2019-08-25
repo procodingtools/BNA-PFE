@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_bar"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:padding="5dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="12dp"
+            android:onClick="actionFinish"
+            android:background="@drawable/ripple_transparent"
+            android:id="@+id/back_btn"
+            app:srcCompat="@drawable/ic_arrow_back_white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:id="@+id/list_title_tv"
+            android:layout_toRightOf="@id/back_btn"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:textSize="25dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/ic_print_white"
+            android:visibility="gone"
+            android:id="@+id/print_iv"
+            android:layout_marginEnd="20dp"/>
+    </RelativeLayout>
+
+
+    <!--La liste de Android-->
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_bar"
+        android:layout_marginTop="10dp"
+        android:layout_above="@id/pay_btn"
+        android:id="@+id/recycler_view"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:id="@+id/centered_tv"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:textSize="25dp"/>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_base_color="#bdbdbd"
+        app:shimmer_auto_start="true"
+        app:shimmer_highlight_color="@color/grey"
+        app:shimmer_duration="1000"
+        android:id="@+id/shimmer"
+        android:layout_below="@id/title_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <include layout="@layout/list_item_employees_manager"/>
+            <include layout="@layout/list_item_employees_manager"/>
+            <include layout="@layout/list_item_employees_manager"/>
+            <include layout="@layout/list_item_employees_manager"/>
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pay_btn"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_background"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:text="@string/pay_salary"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:onClick="actionAjoutEmploye"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        app:srcCompat="@drawable/ic_add_white"
+        app:rippleColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        app:backgroundTint="@color/primaryGreen"
+        android:visibility="gone"
+        android:layout_margin="16dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/recherche_fab"
+        android:onClick="actionFabFiltrer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        app:srcCompat="@drawable/ic_search_white"
+        app:rippleColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        app:backgroundTint="@color/primaryGreen"
+        android:visibility="gone"
+        android:layout_margin="16dp" />
+
+</RelativeLayout>

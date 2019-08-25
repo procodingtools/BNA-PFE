@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:onClick="hideSoftKeyboard"
+    tools:context=".activities.MainActivity">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="100dp"
+        android:onClick="hideSoftKeyboard"
+        android:src="@drawable/bna_entreprise_green" />
+
+
+    <RelativeLayout
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:onClick="hideSoftKeyboard">
+
+        <EditText
+            android:id="@+id/username_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableStart="@drawable/ic_user_grey"
+            android:hint="@string/username"
+            android:inputType="textEmailAddress"
+            android:padding="15dp" />
+
+        <EditText
+            android:id="@+id/pass_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/username_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableStart="@drawable/ic_key_grey"
+            android:hint="@string/passwd"
+            android:inputType="textPassword"
+            android:padding="15dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pass_tv"
+            android:layout_centerHorizontal="true"
+            android:padding="14dp"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:onClick="actionResetPasswd"
+            android:id="@+id/forget_passwd_tv"
+            android:text="@string/forget_passwd"/>
+
+
+        <RelativeLayout
+            android:id="@+id/to_scale_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/forget_passwd_tv"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_background"
+            android:animateLayoutChanges="true">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="50dp"
+                android:background="@color/transparent"
+                android:text="@string/login"
+                android:textColor="@color/white" />
+
+            <RelativeLayout
+                android:id="@+id/to_scale_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:animateLayoutChanges="false"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="5dp"
+                    android:indeterminateTint="#fff" />
+
+                <RelativeLayout
+                    android:id="@+id/text_layout"
+                    android:layout_width="10000dp"
+                    android:layout_height="10000dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/welcome_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="sans-serif-light"
+                        android:text="BienVenu"
+                        android:textColor="@color/white"
+                        android:textSize="50dp" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="5dp"
+    android:paddingRight="15dp"
+    android:onClick="hideSoftKeyboard"
+    android:padding="15dp"
+    android:background="@drawable/dialog_background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/put_emp_rib"
+        android:textColor="@color/white"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_marginTop="5dp"/>
+
+    <android.support.v7.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/rib"
+        android:id="@+id/rib_et"
+        android:drawableStart="@drawable/ic_credit_card_grey"
+        android:padding="10dp"
+        android:inputType="number"
+        android:layout_marginTop="20dp"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:background="@drawable/edit_text_background"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:animateLayoutChanges="true"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_background">
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:background="@color/transparent"
+            android:id="@+id/ok_btn"
+            android:text="@string/ok"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            android:indeterminateTint="@color/white"
+            android:id="@+id/progress"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

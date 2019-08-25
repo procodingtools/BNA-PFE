@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="15dp"
+    android:paddingRight="15dp"
+    android:paddingLeft="15dp"
+    android:background="@drawable/dialog_background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:text="@string/filter"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <AutoCompleteTextView
+        android:layout_below="@id/title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:hint="@string/entrer_nom_emp"
+        android:paddingStart="10dp"
+        android:paddingEnd="5dp"
+        android:maxLines="1"
+        android:inputType="text"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/emp_nom_tv"
+        android:background="@drawable/edit_text_background"
+        />
+
+    <RelativeLayout
+        android:layout_below="@id/emp_nom_tv"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="5dp"
+        android:id="@+id/date_layout"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/edit_text_background"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:hint="@string/pay_date"
+            android:id="@+id/date_tv"
+            />
+    </RelativeLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_layout"
+        android:layout_marginLeft="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/filter"
+        android:id="@+id/ok_btn"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_background"/>
+
+</RelativeLayout>
